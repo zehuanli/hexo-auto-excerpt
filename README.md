@@ -5,7 +5,7 @@ Hexo supports excerpts by adding <!-- more --> tag. You can automate this by usi
 ### Install
 
 ```sh
-npm install --save hexo-auto-excerpt
+npm install https://github.com/zehuanli/hexo-auto-excerpt.git
 ```
 
 ### Option
@@ -13,3 +13,7 @@ npm install --save hexo-auto-excerpt
 excerpt_length: 350 (number of characters)
 
 default length is 300, if not specified.
+
+### Update
+
+Stop processing the post if an excerpt has already been generated for it.
