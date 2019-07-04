@@ -17,3 +17,5 @@ default length is 300, if not specified.
 ### Update
 
 Stop processing the post if an excerpt has already been generated for it.
+
+### Tweaked for personal fix
