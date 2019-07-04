@@ -16,10 +16,13 @@ const htmlToText = require('html-to-text');
     hexo.extend.filter.register('after_post_render', function (data) {
         // Return original post data if an excerpt has already been generated, to support <!--more--> tag
         if (data.excerpt) {
+            // Tweak
+            data.excerpt = data.excerpt.replace(/&amp;/g, '&amp;amp;');
             return data;
         }
         const excerptLength = hexo.config.excerpt_length || 300;
-        const post = sanitize(data.content);
+        // Tweak
+        const post = sanitize(data.content.replace(/&(amp;)*lt;/g, '<'));
         const excerpt = post.substr(0, excerptLength);
         data.excerpt = excerpt;
         return data;
